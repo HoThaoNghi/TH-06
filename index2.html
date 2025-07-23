@@ -7,20 +7,35 @@
 </head>
 <body>
     <input id="inputmail" type="text" placeholder="Nhap mail">
+    <span id="spanmail"></span>
     <button id="check">Check</button>
     <script>
         var inputmail=document.getElementById('inputmail');
+        var spanmail=document.getElementById('spanmail');
         var check=document.getElementById('check');
+        
+        
         check.onclick= function(){
-            var patern=/^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$/;
+    
+           var valuerong= inputmail.value.trim();
+            if(valuerong ===""){
+                spanmail.innerText='Vui lòng nhập dữ liệu';
+                return;
+            }else{
+            var patern=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             var logic=patern.test(inputmail.value);
-        
-        
-        
-        
+            spanmail.innerText=' ';
+             if(logic){
+                spanmail.innerText='Success';
+            }else if(valuerong ===" "){
+                spanmail.innerText='Vui lòng nhập dữ liệu';
+                return;
+            }else{
+                spanmail.innerText='Error';
+            }
+         }
+
         }
-
-
     </script>
 </body>
 </html>
