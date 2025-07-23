@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputmail" type="text" placeholder="Nhap mail">
+    <button id="check">Check</button>
+    <script>
+        var inputmail=document.getElementById('inputmail');
+        var check=document.getElementById('check');
+        check.onclick= function(){
+            var patern=/^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$/;
+            var logic=patern.test(inputmail.value);
+        
+        
+        
+        
+        }
+
+
+    </script>
+</body>
+</html>

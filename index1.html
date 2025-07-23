@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .spaninput{
+        background: darkkhaki;
+        color: chocolate;
+    }
+</style>
+<body>
+    <input id="inputdate" type="text" placeholder="DD/MM/YYYY">
+    <span id="spaninput" class="spaninput"></span>
+    <button id="check">Click</button>
+    <script>
+        var inputdate=document.getElementById('inputdate');
+        var spaninput=document.getElementById('spaninput');
+        var check=document.getElementById('check');
+       
+
+
+        check.onclick =function() {
+           
+            var valuerong= inputdate.value.trim();
+           if(valuerong ===""){
+            spaninput.innerText='Vui long nhap du lieu';
+            return;
+           }
+
+           var inputday= inputdate.value.split('/');
+           var mydate= new Date(inputday[2],inputday[1]-1,inputday[0]);
+           var today= new Date ();
+           today.setHours(0,0,0,0);
+           mydate.setHours(0,0,0,0);
+
+           if(today > mydate){
+            spaninput.innerText= 'Ngay sau ngay hien tai';
+           } else if(today < mydate){
+            spaninput.innerText= 'Ngay truoc ngay hien tai';
+           } else {spaninput.innerText= 'Ngay hien tai';}
+            
+        }
+
+    </script>
+</body>
+</html>
