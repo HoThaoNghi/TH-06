@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputlink" type="text" placeholder="Nhập link">
+    <span id="spaninput"></span>
+    <button id="check">Check</button>
+    <script>
+        var inputlink=document.getElementById('inputlink');
+        var spaninput=document.getElementById('spaninput');
+        var check=document.getElementById('check');
+
+        check.onclick=()=>{
+            var patern=/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+            var logic= patern.test(inputlink.value);
+            if(logic){
+                spaninput.innerText='Đăng nhập thành công';
+            }else spaninput.innerText='Đăng nhập không thành công';
+        }
+    </script>
+</body>
+</html>
