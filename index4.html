@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputnumber" type="text" placeholder="Nhập số điện thoại">
+    <span id="spaninput"></span>
+    <button id="check">Check</button>
+    <script>
+        var inputnumber=document.getElementById('inputnumber');
+        var spaninput=document.getElementById('spaninput');
+        var check=document.getElementById('check');
+
+        check.onclick=()=>{
+            var patern=/^0\d{9}$/;
+            var logic=patern.test(inputnumber.value);
+            if(logic){
+                spaninput.innerText='Số điện thoại hợp lệ';
+            }else spaninput.innerText='Số điện thoại không hợp lệ';
+        }
+    </script>
+</body>
+</html>
