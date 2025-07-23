@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputpass" type="text" placeholder="Nhập mật khẩu">
+    <span id="spanpass"></span>
+    <button id="check">Check</button>
+    <script>
+        var inputpass=document.getElementById('inputpass');
+        var spanpass=document.getElementById('spanpass');
+        var check=document.getElementById('check');
+        check.onclick =()=>{
+            var valuerong=inputpass.value.trim();
+            if(valuerong===""){spanpass.innerText='Vui lòng nhập dữ liệu';
+            }else{
+            var patern=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+            var logic=patern.test(inputpass.value);
+            if(logic){
+                spanpass.innerText='Success';
+            }else spanpass.innerText='Error';
+        }
+    }
+    </script>
+</body>
+</html>
